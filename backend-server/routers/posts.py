@@ -2,10 +2,11 @@ from fastapi import APIRouter, HTTPException
 import json
 from typing import List
 from models.posts_models import PostsJsonFields, EventCreatePost
-from utils.json_utils import posts_json_file_path
+#from utils.json_utils import posts_json_file_path
 import os
 
 router = APIRouter()
+posts_json_file_path = "../src/data/posts.json"
 
 #returns all posts inside the community
 @router.get("/posts/all", response_model=List[PostsJsonFields])
