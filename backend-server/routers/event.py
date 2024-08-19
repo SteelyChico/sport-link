@@ -2,12 +2,13 @@ from fastapi import APIRouter, HTTPException, Path # type: ignore
 import json
 from typing import List
 from models.event_models import *
-from utils.json_utils import events_json_file_path
+#from utils.json_utils import events_json_file_path
 import uuid
 from datetime import datetime
 import os
 
 router = APIRouter()
+events_json_file_path = "../src/data/events.json"
 
 #returns all events json
 @router.get("/events/all", response_model=List[EventsJsonFields])
